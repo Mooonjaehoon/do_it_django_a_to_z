@@ -92,6 +92,11 @@
 					{% for p in post_list %}
                     <!-- Featured blog post-->
                     <div class="card mb-4">
+						{% if p.head_image %}
+							<img class="card-img-top" src="{{p.head_image_url}}" alt = "{{p}} head im-age">
+						{% else %}
+	                        <img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/800/200" alt="random_image">
+						{% endif %}
                         <a href="#!"><img class="card-img-top" src="{{ post.head_image.url }}" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">January 1, 2023</div>
